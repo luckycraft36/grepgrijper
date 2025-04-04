@@ -1,29 +1,12 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
 #spel-container {
     width: 800px;
     height: 600px;
+    position: relative;
     margin: 50px auto;
     border: 2px solid #fff;
-    position: relative;
-    overflow: hidden;
-    background-image: url('ruimte-achtergrond.jpg'); /* Voeg een geschikte achtergrondafbeelding toe */
+    background-image: url('ruimte-achtergrond.jpg');
     background-size: cover;
-}
-
-#ruimteschip {
-    width: 50px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: bottom 8s linear;
+    overflow: hidden;
 }
 
 .planeet {
@@ -33,10 +16,18 @@ body {
 
 #aarde {
     bottom: 20px;
-    left: 10%;
+    left: 20px;
 }
 
 #mercurius {
     top: 20px;
-    right: 10%;
+    right: 20px;
+}
+
+#ruimteschip {
+    width: 50px;
+    position: absolute;
+    left: 20px; /* Startpositie: zelfde als aarde */
+    bottom: 70px; /* Iets boven de aarde */
+    transition: left 8s linear, bottom 8s linear;
 }
