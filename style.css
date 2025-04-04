@@ -16,3 +16,27 @@ body {
     background-image: url('ruimte-achtergrond.jpg'); /* Voeg een geschikte achtergrondafbeelding toe */
     background-size: cover;
 }
+
+#ruimteschip {
+    width: 50px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 8s linear;
+}
+
+.planeet {
+    width: 100px;
+    position: absolute;
+}
+
+#aarde {
+    bottom: 20px;
+    left: 10%;
+}
+
+#mercurius {
+    top: 20px;
+    right: 10%;
+}
