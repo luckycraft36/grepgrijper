@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ruimteschip_heen = document.getElementById('ruimteschip_heen');
-    const ruimteschip_terug = document.getElementById('ruimteschip_terug');
+    const ruimteschipHeen = document.getElementById('ruimteschip_heen');
+    const ruimteschipTerug = document.getElementById('ruimteschip_terug');
     const aarde = document.getElementById('aarde');
     const mercurius = document.getElementById('mercurius');
 
@@ -15,33 +15,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function vliegNaarMercurius() {
         if (opAarde) {
-            // Beweeg ruimteschip naar Mercurius
-            ruimteschip_heen.style.left = 'calc(100% - 70px)'; // 20px van rechterkant (100% - 50px schip - 20px marge)
-            ruimteschip_heen.style.bottom = 'calc(100% - 120px)'; // 20px van bovenkant (100% - 100px planeet - 20px marge)
+            // Beweeg ruimteschip_heen naar Mercurius
+            ruimteschipHeen.style.left = 'calc(100% - 70px)';
+            ruimteschipHeen.style.bottom = 'calc(100% - 120px)';
             opAarde = false;
             setTimeout(() => {
+                // Verberg ruimteschip_heen na 2 seconden
+                ruimteschipHeen.style.display = 'none';
                 verzamelGrep();
             }, 8000); // 8 seconden reistijd
         }
     }
 
     function verzamelGrep() {
-        grepVoorraad += 10; // Verzamelt 10 grep
-        console.log('Grep verzameld op Mercurius.');
-        updateStatus();
+        // Wacht 2 seconden voordat ruimteschip_terug verschijnt
         setTimeout(() => {
-            vliegNaarAarde();
-        }, 2000); // 2 seconden wachten voordat terugkeer
+            ruimteschipTerug.style.display = 'block';
+            grepVoorraad += 10; // Verzamelt 10 grep
+            console.log('Grep verzameld op Mercurius.');
+            updateStatus();
+        }, 2000);
     }
 
     function vliegNaarAarde() {
-        // Beweeg ruimteschip terug naar Aarde
-        ruimteschip_terug.style.left = '20px';
-        ruimteschip_terug.style.bottom = '70px';
-        setTimeout(() => {
-            opAarde = true;
-            verkoopGrep();
-        }, 8000); // 8 seconden reistijd
+        if (!opAarde) {
+            // Beweeg ruimteschip_terug naar Aarde
+            ruimteschipTerug.style.left = '20px';
+            ruimteschipTerug.style.bottom = '70px';
+            setTimeout(() => {
+                // Verberg ruimteschip_terug en toon ruimteschip_heen
+                ruimteschipTerug.style.display = 'none';
+                ruimteschipHeen.style.display = 'block';
+                opAarde = true;
+                verkoopGrep();
+            }, 8000); // 8 seconden reistijd
+        }
     }
 
     function verkoopGrep() {
