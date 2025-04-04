@@ -42,4 +42,13 @@
       position: absolute;
       transition: left 8s linear, bottom 8s linear;
   }
+  #ruimteschip_heen {
+      width: 50px;
+      height: 50px;
+      background-image: url('afbeeldingen/ruimteschip_heen.png');
+      background-size: contain;
+      position: absolute;
+      /* overige stijlen */
+  }
+
 
