@@ -22,21 +22,17 @@
 #mercurius {
     top: 20px;
     right: 20px;
+
 }
 
 #ruimteschip_heen {
-    width: 50px;
-    position: absolute;
-    left: 20px; /* Startpositie: zelfde als aarde */
+    left: 20px; /* Startpositie: bij de aarde */
     bottom: 70px; /* Iets boven de aarde */
-    transition: left 8s linear, bottom 8s linear;
+    display: block; /* Zichtbaar bij start */
 }
 
 #ruimteschip_terug {
-    width: 50px;
-    position: absolute;
-    left: 20px; /* Startpositie: zelfde als aarde */
-    bottom: 70px; /* Iets boven de aarde */
-    transition: left 8s linear, bottom 8s linear;
-
+    left: calc(100% - 70px); /* Startpositie: bij Mercurius */
+    bottom: calc(100% - 120px); /* Iets onder Mercurius */
+    display: none; /* Verborgen bij start */
 }
