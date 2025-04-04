@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function vliegNaarMercurius() {
         if (opAarde) {
-            ruimteschip.style.bottom = '80%';
+            // Beweeg ruimteschip naar Mercurius
+            ruimteschip.style.left = 'calc(100% - 70px)'; // 20px van rechterkant (100% - 50px schip - 20px marge)
+            ruimteschip.style.bottom = 'calc(100% - 120px)'; // 20px van bovenkant (100% - 100px planeet - 20px marge)
             opAarde = false;
             setTimeout(() => {
                 verzamelGrep();
@@ -32,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function vliegNaarAarde() {
-        ruimteschip.style.bottom = '50px';
+        // Beweeg ruimteschip terug naar Aarde
+        ruimteschip.style.left = '20px';
+        ruimteschip.style.bottom = '70px';
         setTimeout(() => {
             opAarde = true;
             verkoopGrep();
