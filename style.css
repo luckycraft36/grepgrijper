@@ -24,10 +24,19 @@
     right: 20px;
 }
 
-#ruimteschip {
+#ruimteschip_heen {
     width: 50px;
     position: absolute;
     left: 20px; /* Startpositie: zelfde als aarde */
     bottom: 70px; /* Iets boven de aarde */
     transition: left 8s linear, bottom 8s linear;
+}
+
+#ruimteschip_terug {
+    width: 50px;
+    position: absolute;
+    left: 20px; /* Startpositie: zelfde als aarde */
+    bottom: 70px; /* Iets boven de aarde */
+    transition: left 8s linear, bottom 8s linear;
+
 }
